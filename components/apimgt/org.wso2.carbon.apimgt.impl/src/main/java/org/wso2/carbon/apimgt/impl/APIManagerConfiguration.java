@@ -597,9 +597,6 @@ public class APIManagerConfiguration {
                 }
                 // Set distributed throttle configurations as system properties
                 addDistributedThrottleConfigsAsSystemProperties(distributedThrottleConfig);
-
-
-
             } else if (elementHasText(element)) {
                 String key = getKey(nameStack);
                 String value = MiscellaneousUtil.resolve(element, secretResolver);
