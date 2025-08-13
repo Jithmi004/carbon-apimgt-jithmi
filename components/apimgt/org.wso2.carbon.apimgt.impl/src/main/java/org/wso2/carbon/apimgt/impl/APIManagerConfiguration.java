@@ -2183,6 +2183,10 @@ public class APIManagerConfiguration {
         return redisConfig;
     }
 
+    public DistributedThrottleConfig getDistributedThrottleConfig() {
+
+        return distributedThrottleConfig;
+    }
 
     public RedisConfig getKVStoreConfig() {
 
