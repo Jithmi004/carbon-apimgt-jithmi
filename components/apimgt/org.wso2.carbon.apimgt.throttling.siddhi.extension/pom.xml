@@ -57,6 +57,23 @@
             <classifier>runtime</classifier>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>5.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.json.wso2</groupId>
+            <artifactId>json</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.servicemix.bundles</groupId>-->
+<!--            <artifactId>org.apache.servicemix.bundles.jedis</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>
@@ -73,7 +90,13 @@
                             org.wso2.carbon.apimgt.throttling.siddhi.extension,
                             org.wso2.carbon.apimgt.throttling.siddhi.extension.*
                         </Export-Package>
+                        <Private-Package>
+                            redis.clients.jedis.*
+                        </Private-Package>
                         <Import-Package>
+                            !redis.clients.jedis.*,
+                            org.apache.commons.pool2.*,
+                            org.json.wso2.*,
                             *;resolution:=optional
                         </Import-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
